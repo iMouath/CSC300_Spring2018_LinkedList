@@ -16,6 +16,9 @@ public class LinkedList
     public void addFront(int payload)
     {
         //add to front of list
+        Node newHead = new Node(payload);
+        newHead.setNextNode(this.head);
+        this.head = newHead;
     }
 
     public void display()
@@ -27,6 +30,13 @@ public class LinkedList
         else
         {
             //do stuff here
+
+            while(this.head.getNextNode() != null){
+                System.out.println(this.head.getPayload());
+                this.head = this.head.getNextNode();
+            }
+            System.out.println(this.head.getPayload());
         }
     }
+
 }

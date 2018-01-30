@@ -15,5 +15,19 @@ public class Node
         this.nextNode = null;
     }
 
+    public int getPayload() {
+        return payload;
+    }
 
+    public void setPayload(int payload) {
+        this.payload = payload;
+    }
+
+    public Node getNextNode() {
+        return nextNode;
+    }
+
+    public void setNextNode(Node nextNode) {
+        this.nextNode = nextNode;
+    }
 }
