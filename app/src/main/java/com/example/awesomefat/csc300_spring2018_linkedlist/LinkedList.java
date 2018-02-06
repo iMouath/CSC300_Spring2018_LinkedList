@@ -15,10 +15,42 @@ public class LinkedList
 
     public void addFront(int payload)
     {
+        Node n = new Node(payload);
+
         //add to front of list
-        Node newHead = new Node(payload);
-        newHead.setNextNode(this.head);
-        this.head = newHead;
+        if(this.head == null)
+        {
+            this.head = n;
+        }
+        else
+        {
+            //not dealing with the empty list
+            n.setNextNode(this.head);
+            this.head = n;
+        }
+    }
+
+    public void addEnd(int payload)
+    {
+        if(this.head == null)
+        {
+            this.addFront(payload);
+        }
+        else
+        {
+            this.head.addEnd(payload);
+            /*
+            Node n = new Node(payload);
+            Node currNode = this.head;
+
+            while(currNode.getNextNode() != null)
+            {
+                currNode = currNode.getNextNode();
+            }
+            //currnode is sitting at the last node
+            currNode.setNextNode(n);
+            */
+        }
     }
 
     public void display()
@@ -30,13 +62,19 @@ public class LinkedList
         else
         {
             //do stuff here
-
-            while(this.head.getNextNode() != null){
-                System.out.println(this.head.getPayload());
-                this.head = this.head.getNextNode();
+            this.head.display();
+            System.out.println("");
+            /*
+            String answer = "";
+            Node currNode = this.head;
+            while(currNode != null)
+            {
+                answer = answer + currNode.getPayload() + " -> ";
+                currNode = currNode.getNextNode();
             }
-            System.out.println(this.head.getPayload());
+            System.out.println(answer);
+            */
+
         }
     }
-
 }
