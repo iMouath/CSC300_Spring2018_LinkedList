@@ -26,13 +26,42 @@ public class LinkedList
     {
         //removes the front of the linked list, and updates the interface
         //and ultimately returns the int payload of the node that was removed.
+        Node nodeToRemove = this.head;
+        if(this.head != null)
+        {
+            this.head = this.head.getNextNode();
+        }
+        int payload = nodeToRemove.getPayload();
+        nodeToRemove.setNextNode(null);
         this.linkedListContainer.removeViewAt(0); // removes the view at 0
+        return payload;
     }
 
     public int removeEnd()
     {
         //removes the end of the linked list, and updates the interface
         //and ultimately returns the int payload of the node that was removed.
+        this.linkedListContainer.removeViewAt(this.linkedListContainer.getChildCount()-1);
+        if (this.head == null) //nothing to remove
+        {
+            return -1;
+        }
+        else {
+            if (this.head.getNextNode() == null) { //2 element list remove last
+                Node node = this.head;
+                this.head = null;
+                return node.getPayload();
+            } else { // find end and set it to null
+                Node current = this.head;
+                Node returnedNode = current.getNextNode();
+                while (current.getNextNode() != null && returnedNode.getNextNode() != null) {
+                    current = current.getNextNode();
+                    returnedNode = current.getNextNode();
+                }
+                current.setNextNode(null);
+                return returnedNode.getPayload();
+            }
+        }
     }
 
     public void addFront(int payload)

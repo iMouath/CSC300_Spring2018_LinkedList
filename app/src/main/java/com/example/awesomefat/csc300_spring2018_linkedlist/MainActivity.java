@@ -61,4 +61,14 @@ public class MainActivity extends AppCompatActivity
         this.ll.addEnd(Integer.parseInt(temp));
         //this.ll.display();
     }
+
+    public void removeFront(View v)
+    {
+        this.ll.removeFront();
+    }
+
+    public void removeEnd(View v)
+    {
+        this.ll.removeEnd();
+    }
 }
