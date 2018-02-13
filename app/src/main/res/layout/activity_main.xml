@@ -20,6 +20,15 @@
             android:inputType="number"
             android:textAlignment="center" />
 
+        <EditText
+            android:id="@+id/newNumberIndexET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Enter Index"
+            android:inputType="number"
+            android:textAlignment="center" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -32,6 +41,14 @@
                 android:layout_weight="1"
                 android:onClick="addFrontButtonClicked"
                 android:text="Add Front" />
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="addAtIndexButtonClicked"
+                android:text="ADD AT INDEX" />
 
             <Button
                 android:id="@+id/addEndButton"
@@ -56,6 +73,14 @@
                 android:text="Remove Front" />
 
             <Button
+                android:id="@+id/button6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="removeAtIndexButtonClicked"
+                android:text="Remove At Index" />
+
+            <Button
                 android:id="@+id/button4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -63,6 +88,7 @@
                 android:onClick="removeEndButtonClicked"
                 android:text="Remove End" />
         </LinearLayout>
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
